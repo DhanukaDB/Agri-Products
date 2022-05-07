@@ -1,11 +1,16 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
 
-import PaymentForm from "./components/PaymentForm";
 function App() {
   return (
-    <div className="App">
-      <PaymentForm />
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
