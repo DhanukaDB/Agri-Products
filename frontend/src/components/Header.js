@@ -26,11 +26,16 @@ function Header(){
       </NavDropdown>
     </Nav>
     <Nav>
-      <Nav.Link href="#deets">More deets</Nav.Link>
+      <Nav.Link href="#deets">Sign In</Nav.Link>
       <Nav.Link eventKey={2} href="#memes">
-        Dank memes
+        Sign Up
       </Nav.Link>
     </Nav>
+    <Nav.Link eventKey={3} href="#memes">
+    <img  src="https://res.cloudinary.com/hidl3r/image/upload/v1651918382/AgriManagement/icons8-shopping-cart-24_strvwd.png" alt="product"
+          />
+            </Nav.Link> 
+
   </Navbar.Collapse>
   </Container>
 </Navbar>

@@ -3,19 +3,28 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "scripts": {
-    "start": "nodemon server.js"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.18.1",
+
+    "mogoose": "^0.0.1-security",
+    "mongoose": "^6.3.2",
+    "nodemon": "^2.0.16",
+    "stripe": "^8.222.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC"
+
     "mongoose": "^6.3.2",
     "nodemon": "^2.0.16",
     "stripe": "^8.222.0",
     "uuid": "^8.3.2"
   }
+
 }
