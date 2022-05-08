@@ -1,16 +1,21 @@
 import React from "react";
 import Header from "./Header";
-import { Carousel } from "react-bootstrap";
+import { Carousel,Container,Row,Col} from "react-bootstrap";
 
 function Home() {
   return (
     <div>
-      <Header />
+        <Header />
+<Container>
+  <Row>
+    <Col>
+    
+  
       <Carousel>
         <Carousel.Item interval={100}>
-          <img
+          <img width={100} height={800}
             className="d-block w-100"
-            src="holder.js/800x400?text=First slide&bg=373940"
+            src="https://res.cloudinary.com/hidl3r/image/upload/v1651988014/AgriManagement/markus-spiske-4PG6wLlVag4-unsplash_f1hhgu.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -19,9 +24,9 @@ function Home() {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={500}>
-          <img
+          <img width={100} height={800}
             className="d-block w-100"
-            src="holder.js/800x400?text=Second slide&bg=282c34"
+            src="https://res.cloudinary.com/hidl3r/image/upload/v1651985861/AgriManagement/marcel-l-4xA6jsNo8FM-unsplash_gdbuxx.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -30,9 +35,9 @@ function Home() {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img
+          <img  
             className="d-block w-100"
-            src="holder.js/800x400?text=Third slide&bg=20232a"
+            src="https://res.cloudinary.com/hidl3r/image/upload/v1651985404/AgriManagement/megan-thomas-xMh_ww8HN_Q-unsplash_ye0hzc.jpg"
             alt="Third slide"
           />
           <Carousel.Caption>
@@ -43,7 +48,19 @@ function Home() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    </div>
+
+    </Col>
+   
+  </Row>
+  <Row>
+    <Col>1 of 3</Col>
+   
+  </Row>
+</Container>
+
+</div>
+     
+ 
   );
 }
 
