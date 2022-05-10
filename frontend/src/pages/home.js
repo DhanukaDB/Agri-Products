@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "../components/Header";
 import { Carousel, Container, Row, Col } from "react-bootstrap";
 
 function Home() {
   return (
     <div>
-      <Header />
       <Container>
         <Row>
           <Col>

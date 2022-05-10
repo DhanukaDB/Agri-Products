@@ -2,18 +2,29 @@ import "./index.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
-import Payment from "./components/Payment/Payment";
+import Payment from "./pages/payment/payment";
+import CheckoutSucess from "./components/CheckoutSucess";
+import Header from "./components/Header";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/payment" element={<Payment />}></Route>
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <Header />
+      <Router>
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/payment" element={<Payment />}></Route>
+            <Route
+              path="/checkout-success"
+              element={<CheckoutSucess />}
+            ></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
+        </div>
+      </Router>
+    </div>
   );
 }
 
