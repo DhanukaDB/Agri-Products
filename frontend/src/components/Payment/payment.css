@@ -1,0 +1,42 @@
+.main{
+    padding: 15px;
+    display: flex;
+    background-color: rgb(196, 249, 205);
+}
+.container{
+    width: 100%;
+    height: fit-content;
+    max-width: 1400px;
+}
+.container-review{
+    background-color: #fff;
+    flex: 0.7;
+    padding: 15px;
+}
+h2{
+    font-weight: 500;
+    border-bottom: 1px solid lightgreen;
+    padding-bottom: 15px;
+}
+.subtotal-container{
+    flex: 0.3;
+    background-color: #fff;
+    margin-left: 10px;
+}
+.container-address{
+    margin-top: 20px;
+}
+.address-details {
+      margin-top: 10px;
+      margin-left: 10px;
+  }
+  p{
+      font-size: 14px;
+      margin-top: 4px;
+  }
+  .payment-container{
+      margin-top: 15px;
+  }
+  .pay-button{
+      margin: 30px;
+  }
