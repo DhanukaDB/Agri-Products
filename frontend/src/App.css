@@ -1,0 +1,19 @@
+
+.delivery1{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+  }
+  .delivery{
+    
+    padding: 20px;
+    max-height: 1600px;
+    text-align: center-right;
+    font-size: 20px;
+  
+    max-width: 800px;
+    margin: 10px auto;
+    border-style:solid;
+    background-color: lightslategrey;
+  }
+  
