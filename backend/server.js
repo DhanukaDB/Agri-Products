@@ -29,6 +29,11 @@ app.use("/api/create-checkout-session", stripeRoute);
 const customerRouter = require("./routes/customers.js");
 app.use("/customer", customerRouter);
 
+//Delivery address router
+const deliveryRouter =require("./routes/Delivery.js"); //import  delivery routes
+app.use("/delivery",deliveryRouter); //create delivery routes
+
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, (error) => {
