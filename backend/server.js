@@ -23,7 +23,7 @@ connection.once("open", () => {
 
 // stripe router
 const stripeRoute = require("./routes/stripe");
-app.use("/api/checkout", stripeRoute);
+app.use("/api/create-checkout-session", stripeRoute);
 
 //Customer router
 const customerRouter = require("./routes/customers.js");
