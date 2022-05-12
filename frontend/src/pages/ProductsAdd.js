@@ -69,13 +69,13 @@ setproductName(e.target.value);
 
     }}/>
     <Form.Text className="text-muted">
-      Enter the Provincial numbers also.. Ex:- WPND1122
+      ex : cucumber plant at 3 weeks
     </Form.Text>
   </Form.Group>
 
   <Form.Group className="container" controlId="vModel">
-    <Form.Label>Vehicle Model</Form.Label>
-    <Form.Control type="text" required placeholder="Enter Vehicle Number" onChange={(e)=>{
+    <Form.Label>Category</Form.Label>
+    <Form.Control type="text" required placeholder="Enter Category" onChange={(e)=>{
 
 setcategory(e.target.value);
 
@@ -83,8 +83,8 @@ setcategory(e.target.value);
   </Form.Group>
 
   <Form.Group className="container" controlId="nicNo">
-    <Form.Label>Nic Number</Form.Label>
-    <Form.Control type="text" required placeholder="Enter NIC Number"  maxlength="10" onChange={(e)=>{
+    <Form.Label>Price</Form.Label>
+    <Form.Control type="text" required placeholder="ex :550LKR"  maxlength="10" onChange={(e)=>{
 
 serprice(e.target.value);
 
@@ -92,8 +92,8 @@ serprice(e.target.value);
   </Form.Group>
 
   <Form.Group className="container" controlId="ownerName">
-    <Form.Label>Owner Name</Form.Label>
-    <Form.Control type="text" required placeholder="Enter Owner Name" onChange={(e)=>{
+    <Form.Label>Description</Form.Label>
+    <Form.Control type="text" required placeholder="Enter Description" onChange={(e)=>{
 
 setdescription(e.target.value);
 
@@ -101,8 +101,8 @@ setdescription(e.target.value);
   </Form.Group>
 
   <Form.Group className="container" controlId="manufacYear">
-    <Form.Label>Manufactured Year</Form.Label>
-    <Form.Control type="text" required placeholder="Enter Manufactured Year" maxlength="8" onChange={(e)=>{
+    <Form.Label>Manufactured Date</Form.Label>
+    <Form.Control type="text" required placeholder="Enter Manufactured Date" maxlength="8" onChange={(e)=>{
 
 setmanufacDate(e.target.value);
 
@@ -110,8 +110,8 @@ setmanufacDate(e.target.value);
   </Form.Group>
 
   <Form.Group className="container" controlId="vType">
-    <Form.Label>Vehicle Typer</Form.Label>
-    <Form.Control type="text" required placeholder="Enter Vehicle Typer" onChange={(e)=>{
+    <Form.Label>image</Form.Label>
+    <Form.Control type="text" required placeholder="input image link" onChange={(e)=>{
 
 setimage(e.target.value);
 
@@ -126,7 +126,7 @@ setimage(e.target.value);
     <Button variant="primary" type="submit">
     Submit
   </Button>
-  <Link to ="/vhome"> <Button variant="info">Go  Back To Vehicle home</Button></Link>
+  <Link to ="/"> <Button variant="info">home</Button></Link>
 
 
   </Form.Group>
