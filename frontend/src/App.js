@@ -7,6 +7,7 @@ import CheckoutSucess from "./components/CheckoutSucess";
 import Header from "./components/Header";
 import NotFound from "./components/NotFound";
 import DeliveryAddress from"./components/DeliveryAddress";
+import ProductsAdd from "./pages/ProductsAdd";
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               element={<CheckoutSucess />}
             ></Route>
             <Route path="*" element={<NotFound />}></Route>
+            <Route path="/addproducts" element={<ProductsAdd/>}></Route>
           </Routes>
         </div>
       </Router>
