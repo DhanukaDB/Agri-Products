@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import NotFound from "./components/NotFound";
 import DeliveryAddress from"./components/DeliveryAddress";
 import ProductsAdd from "./pages/ProductsAdd";
+import ProductsAll from "./pages/ProductsAll";
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             ></Route>
             <Route path="*" element={<NotFound />}></Route>
             <Route path="/addproducts" element={<ProductsAdd/>}></Route>
+            <Route path="/allproducts" element={<ProductsAll />}></Route>
           </Routes>
         </div>
       </Router>
