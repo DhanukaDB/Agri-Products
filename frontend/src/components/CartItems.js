@@ -80,12 +80,12 @@ function CartItems(){
                 <Subtotal>
                           <div> 
                             <p>
-                                SubTotal({cart.length} products ) :
-                                 <strong> Rs. {getCartTotal(cart)*qty}</strong>
+                                SubTotal ({cart.length} products ) :
+                                 <strong> Rs. {getCartTotal(cart)*qty}.00</strong>
                             </p>
                             <small>
-                                <input type="checkbox"/>
-                                <span>tytytttt</span>
+                               
+                                <span>Click here to pay...</span>
                             </small>
                        
                         </div>

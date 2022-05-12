@@ -34,7 +34,7 @@ function Carditem({ id, image, title, price }) {
       <Description>
         <h5>{title}</h5>
         
-        <p>₹ {price}</p>
+        <p>Rs. {price}.00</p>
         <FormControlLabel
         control={<Checkbox icon={<FavoriteBorder />} 
                   checkedIcon={<Favorite />}
