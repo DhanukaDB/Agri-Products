@@ -6,8 +6,9 @@ import Payment from "./pages/payment/payment";
 import CheckoutSucess from "./components/CheckoutSucess";
 import Header from "./components/Header";
 import NotFound from "./components/NotFound";
-import DeliveryAddress from"./components/DeliveryAddress";
-import './App.css';
+import DeliveryAddress from "./components/DeliveryAddress";
+import "./App.css";
+import PaymentForm from "./components/PaymentForm";
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
               element={<CheckoutSucess />}
             ></Route>
             <Route path="*" element={<NotFound />}></Route>
+            <Route
+              path="/api/create-checkout-session"
+              element={<PaymentForm />}
+            ></Route>
           </Routes>
         </div>
       </Router>

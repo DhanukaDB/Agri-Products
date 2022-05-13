@@ -1,8 +1,10 @@
 import React from "react";
 import "./payment.css";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 function Payment() {
+  const navigate = useNavigate();
   return (
     <div className="main">
       <div className="container-review">
@@ -20,7 +22,13 @@ function Payment() {
         </div>
         <div className="payment-container">
           <h5>Payment Method</h5>
-          <Button className="pay-button" variant="outline-dark">
+          <Button
+            onClick={() => {
+              navigate("/api/create-checkout-session");
+            }}
+            className="pay-button"
+            variant="outline-dark"
+          >
             Pay Via Credit Card
           </Button>
           <Button className="pay-button" variant="dark">
