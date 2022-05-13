@@ -10,6 +10,9 @@ import "./App.css";
 import PaymentForm from "./components/PaymentForm";
 import ProductsAdd from "./pages/ProductsAdd";
 import CartItems from "./components/CartItems";
+import ProductsAll from "./pages/ProductsAll";
+import FarmerSignup from "./pages/FarmerSignup";
+import FarmerSignin from "./pages/FarmerSignin";
 
 function App() {
   return (
@@ -31,6 +34,10 @@ function App() {
             ></Route>
             <Route path="/addproducts" element={<ProductsAdd />}></Route>
             <Route path="/cartitems" element={<CartItems />} />
+            <Route path="/addproducts" element={<ProductsAdd />}></Route>
+            <Route path="/allproducts" element={<ProductsAll />}></Route>
+            <Route path="/farmerSignup" element={<FarmerSignup />}></Route>
+            <Route path="/farmerSignin" element={<FarmerSignin />}></Route>
           </Routes>
         </div>
       </Router>
