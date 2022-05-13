@@ -4,16 +4,16 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Payment from "./pages/payment/payment";
 import CheckoutSucess from "./components/CheckoutSucess";
-import Header from "./components/Header";
 import NotFound from "./components/NotFound";
 import DeliveryAddress from "./components/DeliveryAddress";
 import "./App.css";
 import PaymentForm from "./components/PaymentForm";
+import ProductsAdd from "./pages/ProductsAdd";
+import CartItems from "./components/CartItems";
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Router>
         <div>
           <Routes>
@@ -29,6 +29,8 @@ function App() {
               path="/api/create-checkout-session"
               element={<PaymentForm />}
             ></Route>
+            <Route path="/addproducts" element={<ProductsAdd />}></Route>
+            <Route path="/cartitems" element={<CartItems />} />
           </Routes>
         </div>
       </Router>

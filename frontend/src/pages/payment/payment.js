@@ -2,8 +2,10 @@ import React from "react";
 import "./payment.css";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useStateValue } from "../../StateProvide";
 
 function Payment() {
+  const [{ address }] = useStateValue();
   const navigate = useNavigate();
   return (
     <div className="main">
@@ -12,12 +14,12 @@ function Payment() {
         <div className="container-address">
           <h5>Shipping Address</h5>
           <div className="address-details">
-            <p>Full Nmame:</p>
-            <p>Flat:</p>
-            <p>Area:</p>
-            <p>Land mark:</p>
-            <p>City and address</p>
-            <p>Phone:</p>
+            <p>{address.fullname}</p>
+            <p>{address.phoneno}</p>
+            <p>{address.buildingNo}</p>
+            <p>{address.street}</p>
+            <p>{address.city}</p>
+            <p>{address.province}</p>
           </div>
         </div>
         <div className="payment-container">

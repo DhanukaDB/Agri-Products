@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Form, Button, Container } from "react-bootstrap";
+import { useStateValue } from "../StateProvide";
+import { useNavigate } from "react-router-dom";
 
 export default function DeliveryAddress() {
   //adding function
 
   //creating states
-
+  const [{}, dispatch] = useStateValue();
   const [fullname, setFullname] = useState("");
   const [phoneno, setPhoneno] = useState("");
   const [buildingNo, setBuildingNo] = useState("");
@@ -16,6 +18,24 @@ export default function DeliveryAddress() {
 
   const [value, setValue] = useState();
 
+  const navigate = useNavigate();
+
+  const deliver = (e) => {
+    e.preventDefault(); //execute setData function, when click submit button
+    dispatch({
+      type: "SET_ADDRESS",
+      item: {
+        fullname,
+        phoneno,
+        buildingNo,
+        street,
+        city,
+        province,
+      },
+    });
+    navigate("/payment");
+  };
+
   function sendData(e) {
     //create event send data
 
@@ -24,9 +44,6 @@ export default function DeliveryAddress() {
       window.location = `/adddelivery`;
       return;
     }
-
-    e.preventDefault(); //execute setData function, when click submit button
-
     const newDelivery = {
       fullname,
       phoneno,
@@ -240,10 +257,9 @@ export default function DeliveryAddress() {
                 </select>
               </div>
               <br />
-              <br />
               <center>
-                <Button type="submit" class="btn btn-primary btn-lg">
-                  Continue to Payment
+                <Button onClick={deliver} class="btn btn-primary btn-lg">
+                  Deliver to this address
                 </Button>
               </center>
             </div>

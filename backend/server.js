@@ -33,6 +33,10 @@ app.use("/customer", customerRouter);
 const deliveryRouter =require("./routes/Delivery.js"); //import  delivery routes
 app.use("/delivery",deliveryRouter); //create delivery routes
 
+//Products Router
+const productsRouter = require("./routes/product.js");
+app.use("/products", productsRouter);
+
 
 const port = process.env.PORT || 5000;
 
