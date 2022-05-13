@@ -10,6 +10,7 @@ import DeliveryAddress from"./components/DeliveryAddress";
 import ProductsAdd from "./pages/ProductsAdd";
 import ProductsAll from "./pages/ProductsAll";
 import FarmerSignup from "./pages/FarmerSignup";
+import FarmerSignin from "./pages/FarmerSignin";
 import './App.css';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path="/addproducts" element={<ProductsAdd/>}></Route>
             <Route path="/allproducts" element={<ProductsAll />}></Route>
             <Route path="/farmerSignup" element={<FarmerSignup />}></Route>
+            <Route path="/farmerSignin" element={<FarmerSignin />}></Route>
           </Routes>
         </div>
       </Router>
