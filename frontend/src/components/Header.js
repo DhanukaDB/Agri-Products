@@ -1,9 +1,14 @@
 import React from "react";
+import {useNavigate} from "react-router-dom";
+import { useStateValue } from "../StateProvide";
+import styled from "styled-components";
 
 import {Container, Navbar,Nav,NavDropdown} from "react-bootstrap";
 
 
 function Header(){
+  const [{cart}]=useStateValue();
+  const navigate = useNavigate();
 
     return(
 
@@ -31,10 +36,14 @@ function Header(){
         Sign Up
       </Nav.Link>
     </Nav>
-    <Nav.Link eventKey={3} href="#memes">
-    <img  src="https://res.cloudinary.com/hidl3r/image/upload/v1651918382/AgriManagement/icons8-shopping-cart-24_strvwd.png" alt="product"
-          />
-            </Nav.Link> 
+    <HeartButton>
+            <img src="./heart.png" alt="" />
+            {/* <p>{cart?.length}</p> */}
+          </HeartButton>
+    <CartButton onClick={() => navigate("/cartitems")}>
+            <img src="./cart.png" alt="" />
+            <p>{cart?.length}</p>
+          </CartButton>
 
   </Navbar.Collapse>
   </Container>
@@ -45,4 +54,36 @@ function Header(){
 
 }
 
+
+const CartButton = styled.div`
+  display: flex;
+  align-items: center;
+  height: 90%;
+  cursor: pointer;
+  img {
+    width: 30px;
+    margin-right: 10px;
+    background-color:white;
+  }
+  p {
+    color: #fff;
+    font-weight: 500;
+  }
+`;
+
+const HeartButton = styled.div`
+  display: flex;
+  align-items: center;
+  height: 90%;
+  cursor: pointer;
+  img {
+    width: 30px;
+    margin-right: 10px;
+  
+  }
+  p {
+    color: red;
+    font-weight: 500;
+  }
+`;
 export default Header; 
