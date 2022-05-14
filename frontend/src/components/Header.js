@@ -7,6 +7,7 @@ import {Container, Navbar,Nav,NavDropdown} from "react-bootstrap";
 
 
 function Header(){
+  const [{favourite}]=useStateValue();
   const [{cart}]=useStateValue();
   const navigate = useNavigate();
 
@@ -36,9 +37,9 @@ function Header(){
         Sign Up
       </Nav.Link>
     </Nav>
-    <HeartButton>
+    <HeartButton onClick={() => navigate("/favouriteitems")}>
             <img src="./heart.png" alt="" />
-            {/* <p>{cart?.length}</p> */}
+            <p>{favourite?.length}</p> 
           </HeartButton>
     <CartButton onClick={() => navigate("/cartitems")}>
             <img src="./cart.png" alt="" />

@@ -9,6 +9,7 @@ import NotFound from "./components/NotFound";
 import DeliveryAddress from"./components/DeliveryAddress";
 import ProductsAdd from "./pages/ProductsAdd";
 import CartItems from './components/CartItems';
+import FavouriteItems from "./pages/Favourites/FavouriteItems";
 import './App.css';
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
             <Route path="*" element={<NotFound />}></Route>
             <Route path="/addproducts" element={<ProductsAdd/>}></Route>
             <Route path="/cartitems" element={<CartItems/>}/>
-
+            <Route path="/favouriteitems" element={<FavouriteItems/>}/>
           </Routes>
         </div>
       </Router>

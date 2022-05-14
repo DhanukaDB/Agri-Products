@@ -63,7 +63,7 @@ const Image = styled.div`
   flex-direction: column;
 
   justify-content: center;
-  align-items: center;
+  align-items: left;
   margin-top: 20px;
   flex: 0.3;
   img {
@@ -89,7 +89,7 @@ const Description = styled.div`
   }
 
   button {
-    width: 100%;
+    width: 10%;
     height: 33px;
     background-color:#adff2f;
     border: none;
