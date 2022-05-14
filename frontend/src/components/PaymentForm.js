@@ -12,7 +12,7 @@ export default function PaymentForm() {
   const payNow = async (token) => {
     try {
       const response = await axios({
-        url: "http://localhost:3000/api/checkout/payment",
+        url: "http://localhost:3000/create-checkout-session",
         method: "post",
         data: {
           amount: product.price * 100,
@@ -42,8 +42,6 @@ export default function PaymentForm() {
         stripeKey={publishableKey}
         lable="Pay Now"
         name="Pay With Credit Card"
-        billingAddress
-        shippingAddress
         amount={priceForStripe}
         description={`Total is : ${product.price}`}
         token={payNow}

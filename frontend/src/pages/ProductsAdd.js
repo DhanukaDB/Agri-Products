@@ -13,7 +13,7 @@ function ProductsAdd(){
   const [image, setimage] = useState("");
 
   function sendData(e){
-    if(description.trim().length != 10){
+    if(description.trim().length < 2){
       alert("Please insert a good Description");
       return
       
@@ -31,7 +31,7 @@ function ProductsAdd(){
 
     }
 
-    axios.post("http://localhost:5000/product/create",newProduct).then(()=>{
+    axios.post("http://localhost:5000/products/create",newProduct).then(()=>{
 
       alert("Product Added Successfully");
     window.location = `/allproducts`;
@@ -63,7 +63,7 @@ function ProductsAdd(){
 <Form onSubmit={sendData}>
   <Form.Group className="container" controlId="vehicleNo">
     <Form.Label>Product Name</Form.Label>
-    <Form.Control type="text" required placeholder="Enter Product Name"  maxlength="8" onChange={(e)=>{
+    <Form.Control type="text" required placeholder="Enter Product Name"  maxlength="20" onChange={(e)=>{
 
 setproductName(e.target.value);
 
@@ -102,7 +102,7 @@ setdescription(e.target.value);
 
   <Form.Group className="container" controlId="manufacYear">
     <Form.Label>Manufactured Date</Form.Label>
-    <Form.Control type="text" required placeholder="Enter Manufactured Date" maxlength="8" onChange={(e)=>{
+    <Form.Control type="date" required placeholder="Enter Manufactured Date" maxlength="8" onChange={(e)=>{
 
 setmanufacDate(e.target.value);
 

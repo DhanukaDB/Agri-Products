@@ -37,9 +37,15 @@ app.use("/delivery",deliveryRouter); //create delivery routes
 const productsRouter = require("./routes/product.js");
 app.use("/products", productsRouter);
 
+
 //Favourites router
 const favouritesRouter = require("./routes/favourites.js");
 app.use("/favourites", favouritesRouter);
+
+//Farmer Router
+const farmerRouter = require("./routes/farmer.js");
+app.use("/farmer", farmerRouter);
+
 
 const port = process.env.PORT || 5000;
 
