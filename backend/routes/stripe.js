@@ -1,26 +1,21 @@
 const router = require("express").Router();
 const stripe = require("stripe")(process.env.SECRET_KEY);
 
-router.post("/create-checkout-session", async (req, res) => {
-  const session = await stripe.checkout.sessions.create({
-    line_items: [
-      {
-        price_data: {
-          currency: "usd",
-          product_data: {
-            name: "T-shirt",
-          },
-          unit_amount: 2000,
-        },
-        quantity: 1,
-      },
-    ],
-    mode: "payment",
-    success_url: `${process.env.CLIENT_URL}/checkout-success`,
-    cancel_url: `${process.env.CLIENT_URL}/cart`,
-  });
-
-  res.send({ url: session.url });
+router.post("/add", async (req, res) => {
+  let status, error;
+  const { token, amount } = req.body;
+  try {
+    await stripe.charges.create({
+      source: token.id,
+      amount,
+      currency: "usd",
+    });
+    status = "sucess";
+  } catch (error) {
+    console.log(error);
+    status = "Failure";
+  }
+  res.json({ error, status });
 });
 
 module.exports = router;
