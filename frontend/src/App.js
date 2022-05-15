@@ -7,7 +7,6 @@ import CheckoutSucess from "./components/CheckoutSucess";
 import NotFound from "./components/NotFound";
 import DeliveryAddress from "./components/DeliveryAddress";
 import "./App.css";
-import PaymentForm from "./components/PaymentForm";
 import ProductsAdd from "./pages/ProductsAdd";
 import CartItems from "./components/CartItems";
 import ProductsAll from "./pages/ProductsAll";
@@ -28,10 +27,6 @@ function App() {
               element={<CheckoutSucess />}
             ></Route>
             <Route path="*" element={<NotFound />}></Route>
-            <Route
-              path="/api/create-checkout-session"
-              element={<PaymentForm />}
-            ></Route>
             <Route path="/addproducts" element={<ProductsAdd />}></Route>
             <Route path="/cartitems" element={<CartItems />} />
             <Route path="/addproducts" element={<ProductsAdd />}></Route>
