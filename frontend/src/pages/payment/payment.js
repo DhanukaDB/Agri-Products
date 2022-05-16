@@ -1,3 +1,4 @@
+import React from 'react';
 import "./payment.css";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
