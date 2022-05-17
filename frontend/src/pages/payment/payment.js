@@ -1,3 +1,4 @@
+import React from "react";
 import "./payment.css";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +7,8 @@ import styled from "styled-components";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
 import { getCartTotal } from "../../reducer";
 import Checkout from "../../components/Payment/Checkout";
+import MobilePayModal from "../../components/Payment/MobilePayModal";
+import SubTotalContainer from "../../components/SubTotalContainer";
 
 function Payment() {
   const [{ address, cart }] = useStateValue();
@@ -26,15 +29,7 @@ function Payment() {
             <p>{address.province}</p>
           </div>
         </div>
-        <div className="payment-container">
-          <h5>Payment Method</h5>
 
-          <Checkout />
-
-          <Button className="pay-button btn-sm" variant="dark">
-            Pay Via Mobile Phone
-          </Button>
-        </div>
         <div className="order">
           <h5>Your order</h5>
           <div>
@@ -52,27 +47,17 @@ function Payment() {
           </div>
         </div>
       </div>
-      <Subtotal>
-        <div>
-          <p>
-            SubTotal ({cart.length} products ) :
-            <strong> Rs. {getCartTotal(cart)}.00</strong>
-          </p>
-          <small>
-            <span>Click here to pay...</span>
-          </small>
-        </div>
-        <button
-          onClick={() => {
-            navigate("/delivery");
-          }}
-        >
-          Place Order <CreditCardIcon />
-        </button>
-      </Subtotal>
+      <SubTotalContainer />
+      <div className="payment-container">
+        <h5>Payment Method</h5>
+
+        <Checkout />
+        <MobilePayModal />
+      </div>
     </div>
   );
 }
+
 const Product = styled.div`
   display: flex;
   align-items: center;
@@ -105,44 +90,6 @@ const Description = styled.div`
     &hover {
       text-decoration: underline;
     }
-  }
-`;
-const Subtotal = styled.div`
-  flex: 0.3;
-  background-color: #fff;
-  margin-left: 15px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  @media only screen and (max-width: 1200px) {
-    flex: none;
-    margin-top: 20px;
-  }
-
-  p {
-    font-size: 20px;
-  }
-  small {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-
-    span {
-      margin-left: 10px;
-    }
-  }
-  button {
-    width: 65%;
-    height: 33px;
-    margin-top: 20px;
-    background-color: #32cd32;
-    border: none;
-    outline: none;
-
-    border-radius: 8px;
   }
 `;
 export default Payment;

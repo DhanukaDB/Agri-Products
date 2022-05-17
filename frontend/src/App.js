@@ -12,6 +12,7 @@ import CartItems from "./components/CartItems";
 import ProductsAll from "./pages/ProductsAll";
 import FarmerSignup from "./pages/FarmerSignup";
 import FarmerSignin from "./pages/FarmerSignin";
+import Mail from "./components/Mail";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/allproducts" element={<ProductsAll />}></Route>
             <Route path="/farmerSignup" element={<FarmerSignup />}></Route>
             <Route path="/farmerSignin" element={<FarmerSignin />}></Route>
+            <Route path="/mail" element={<Mail />}></Route>
           </Routes>
         </div>
       </Router>
