@@ -6,9 +6,11 @@ import Header from "./Header";
 import { getCartTotal } from "../reducer";
 //import CounterFunction from "./CounterFunction";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import { red } from "@material-ui/core/colors";
+import { red,green } from "@material-ui/core/colors";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
 import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
+
 
 function CartItems() {
   const navigate = useNavigate();
@@ -38,6 +40,9 @@ function CartItems() {
       <>
         <Header />
         <h3 style={{ textAlign: "center", fontSize: "5rem" }}>Empty Cart</h3>
+        <br/>
+        <center><Button onClick={() => navigate("/")}   style={{ backgroundColor: green[500] }}>Move to Shop</Button></center>
+
       </>
     );
 
@@ -66,7 +71,7 @@ function CartItems() {
                     <button onClick={Decrement}> - </button>
                   </Quantity>
 
-                  <p>{product.price * qty}</p>
+                  <p>Rs. {product.price * qty}</p>
                   <button
                     onClick={(e) => {
                       if (

@@ -12,9 +12,7 @@ import ProductsAdd from "./pages/ProductsAdd";
 
 import CartItems from './components/CartItems';
 import FavouriteItems from "./pages/Favourites/FavouriteItems";
-import './App.css';
 
-import CartItems from "./components/CartItems";
 import ProductsAll from "./pages/ProductsAll";
 import FarmerSignup from "./pages/FarmerSignup";
 import FarmerSignin from "./pages/FarmerSignin";
@@ -43,9 +41,7 @@ function App() {
               path="/api/create-checkout-session"
               element={<PaymentForm />}
             ></Route>
-            <Route path="/addproducts" element={<ProductsAdd />}></Route>
-            <Route path="/cartitems" element={<CartItems />} />
-            <Route path="/addproducts" element={<ProductsAdd />}></Route>
+           
             <Route path="/allproducts" element={<ProductsAll />}></Route>
             <Route path="/farmerSignup" element={<FarmerSignup />}></Route>
             <Route path="/farmerSignin" element={<FarmerSignin />}></Route>

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import { Carousel,Container,Row,Col} from "react-bootstrap";
 import Carditem from '../components/Card';
+import AllProducts from "./ProductsAll";
 
 function Home() {
   return (
@@ -58,7 +59,8 @@ function Home() {
     <Col>1 of 3</Col>
    
   </Row>
-  <Carditem
+    <AllProducts/>
+  {/* <Carditem
   id={1}
   image={"https://th.bing.com/th/id/OIP.LETgPfZS2G2VzZIEPl0hyAHaE9?pid=ImgDet&w=3872&h=2592&rs=1"}
   price={200}
@@ -74,7 +76,7 @@ function Home() {
 id={3}
 image={"https://th.bing.com/th/id/R.0c856c888523da6127f5a322edcd8b43?rik=wMuJnqRaK8TVOA&pid=ImgRaw&r=0"}
 price={222}
-title={"dsddd"}/>
+title={"dsddd"}/> */}
 </Container>
 
 </div>

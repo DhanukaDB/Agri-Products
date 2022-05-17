@@ -78,7 +78,7 @@ export default function DeliveryAddress() {
         onChange={(e, val) => setValue(val)}
       >
         <div>
-          <a href="/cart">
+          <a href="cartitems">
             <img
               style={{ height: 90, width: 90, marginLeft: 252 }}
               src="https://res.cloudinary.com/dorcq99nr/image/upload/v1652113795/AgriProducts/cart_hvasfk.jpg"

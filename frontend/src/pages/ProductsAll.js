@@ -3,6 +3,8 @@ import Table from 'react-bootstrap/Table'
 import axios from "axios";
 import {Link} from "react-router-dom";
 import {Button,Card} from "react-bootstrap";
+import Carditem from "../components/Card";
+import styled from "styled-components";
 
 
 
@@ -47,12 +49,12 @@ function AllProducts(props){
  
  <br/>
         
-      <Table striped bordered hover variant="dark">
+      {/* <Table striped bordered hover variant="dark"> */}
   <thead>
   <input type="text" placeholder = "Search Product " onChange ={(e) =>{
   setSearch(e.target.value);
 }} />
-    <tr>
+    {/* <tr>
       <th scope="col">Product id</th>
       <th scope="col">Product Name</th>
       <th scope="col">Category</th>
@@ -62,7 +64,7 @@ function AllProducts(props){
       <th scope="col">Image</th>
       
     
-    </tr>
+    </tr> */}
   </thead>
   <tbody>
 
@@ -83,29 +85,44 @@ function AllProducts(props){
 
 
         
-      <tr key={Product._id}>
+      // <tr key={Product._id}>
       
-      <td> <Button variant="outline-primary" onClick={()=>Update(Product._id)}>{Product._id}</Button></td>
-      <td>{Product.productName}</td>
-      <td>{Product.category}</td>
-      <td>{Product.price}</td>
-      <td>{Product.description}</td>
-      <td>{Product.manufacDate}</td>
-      <td>{Product.image}</td>
+      // <td> <Button variant="outline-primary" onClick={()=>Update(Product._id)}>{Product._id}</Button></td>
+      // <td>{Product.productName}</td>
+      // <td>{Product.category}</td>
+      // <td>{Product.price}</td>
+      // <td>{Product.description}</td>
+      // <td>{Product.manufacDate}</td>
+      // <td>{Product.image}</td>
      
-    </tr>
-    );
-    })} 
+    // </tr>
+<Main>
+{
+          products?.map((Product) => (
+        
+    <Carditem
+id={Product._id}
+image={Product.image}
+title={Product.productName}
+price={Product.price}
+// rating={Product.description}
+// name={Product.manufacDate}
 
-   
-    </tbody>
-</Table>
-    
+/>
+  ))}
+</Main>
+
+   );
+  
+          })}
+          </tbody>
+{/* </Table> */}
+          
  <br/>
  <br/>
 
 
- <Card style={{ width: '18rem' }}>
+ {/* <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src="holder.js/100px180" />
   <Card.Body>
     <Card.Title>Card Title</Card.Title>
@@ -115,13 +132,23 @@ function AllProducts(props){
     </Card.Text>
     <Button variant="primary">Go somewhere</Button>
   </Card.Body>
-</Card>
+</Card> */}
     </div>
     
   )
 
 }
-  
+const Main = styled.div`
+display: grid;
+justify-content: center;
+place-items: center;
+width: 100%;
+grid-auto-rows: 420px;
+ grid-template-columns: repeat(4, 280px);
+grid-gap: 20px;
+
+}
+`;
 export default AllProducts;
 
 

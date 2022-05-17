@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App';
 import reducer from './reducer';
+// import reducer from './pages/Favourites/reducer';
 import { StateProvider } from './StateProvide';
 import { initialState } from './reducer';
 

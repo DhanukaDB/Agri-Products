@@ -1,18 +1,32 @@
-import React,{useState} from "react";
+import React from "react";
 import styled from "styled-components";
-import { getTotal } from './reducer';
-import { StateProvider, useStateValue } from '../../StateProvide';
+import {  useStateValue } from '../../StateProvide';
 import Header from '../../components/Header';
-
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import { red,green } from "@material-ui/core/colors";
+import { Button } from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
 
 
 function FavouriteItems(){
+    const navigate = useNavigate();
+
     const [{favourite}, dispatch] = useStateValue();
+    const removeFavouriite = (e, id) => {
+        e.preventDefault();
+    
+        dispatch({
+          type: "DELETE_FAVOURITE",
+          id: id,
+        });
+      };
     if(favourite.length === 0)
     return (
         <>
             <Header/>
-                    <h3 style={{textAlign:"center", fontSize:"5rem"}}>Empty Cart</h3>
+                    <h3 style={{textAlign:"center", fontSize:"5rem"}}>Empty Wishlist</h3>
+                    <br/>
+                    <center><Button onClick={() => navigate("/")}   style={{ backgroundColor: green[500] }}>Move to Shop</Button></center>
         </>
     )
 
@@ -40,10 +54,20 @@ function FavouriteItems(){
                     
         
                          <p>{product.price}</p>  
-                        {/* <button onClick={(e)=> {if (window.confirm('Are you sure you want to delete this record?'))removeProduct(e,product.id)}} style={{backgroundColor:red[500]}} >
-                        <DeleteForeverIcon/></button>  */}
+                         <button
+                    onClick={(e) => {
+                      if (
+                        window.confirm(
+                          "Are you sure you want to delete this from favourites?"
+                        )
+                      )
+                        removeFavouriite(e, product.id);
+                    }}
+                    style={{ backgroundColor: red[500] }}
+                  >
+                    <DeleteForeverIcon />
+                  </button>
 
-                         {/* <CounterFunction/>  */}
                         </Description>
                       
                     </Product>

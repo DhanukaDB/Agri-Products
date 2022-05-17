@@ -41,6 +41,7 @@ function Header(){
             <img src="./heart.png" alt="" />
             <p>{favourite?.length}</p> 
           </HeartButton>
+    
     <CartButton onClick={() => navigate("/cartitems")}>
             <img src="./cart.png" alt="" />
             <p>{cart?.length}</p>

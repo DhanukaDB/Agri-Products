@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useStateValue } from "../StateProvide";
+import { useStateValue } from '../StateProvide';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Favorite from '@material-ui/icons/Favorite';
@@ -9,7 +9,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 function Carditem({ id, image, title, price }) {
  
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart },dispatch] = useStateValue();
   console.log("cart >>>>", cart);
   const addToCart = (e) => {
     e.preventDefault();
@@ -25,7 +25,23 @@ function Carditem({ id, image, title, price }) {
       },
     });
   };
+  const [{ favourite },dispatch1] = useStateValue();
 
+  console.log("favourite >>>>", favourite);
+  const addToFavourites = (e) => {
+    e.preventDefault();
+
+    dispatch1({
+      type: "ADD_TO_WISHLIST",
+      item: {
+        id,
+        title,
+        price,
+        image,
+        
+      },
+    });
+  };
   return (
     <Container>
       <Image>
@@ -38,10 +54,11 @@ function Carditem({ id, image, title, price }) {
         <FormControlLabel
         control={<Checkbox icon={<FavoriteBorder />} 
                   checkedIcon={<Favorite />}
-          name="checkedH" />}
+          name="checkedH" onClick={addToFavourites}/>}
      
       />
         <button onClick={addToCart}>Add to Cart  <ShoppingCartIcon/></button>
+   
       </Description>
     </Container>
   );
@@ -89,7 +106,7 @@ const Description = styled.div`
   }
 
   button {
-    width: 10%;
+    width: 100%;
     height: 33px;
     background-color:#adff2f;
     border: none;
