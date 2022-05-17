@@ -1,7 +1,7 @@
 .main{
-    padding: 15px;
+    padding: 10px;
     display: flex;
-    background-color: rgb(196, 249, 205);
+    background-color: rgb(236, 252, 239);
 }
 .container{
     width: 100%;
@@ -35,7 +35,7 @@ h2{
       margin-top: 4px;
   }
   .payment-container{
-      margin-top: 15px;
+      margin-top: 5px;
   }
   .pay-button{
       margin: 30px;
