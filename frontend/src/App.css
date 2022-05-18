@@ -16,4 +16,12 @@
     border-style:solid;
     background-color: lightslategrey;
   }
+
+
+  .im{
+    max-width: 70px;
+  }
+  .login{
+    font-family: 'Grand Hotel', cursive;
+  }
   
