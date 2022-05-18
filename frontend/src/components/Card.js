@@ -44,6 +44,7 @@ function Carditem({ id, image, title, price }) {
   };
   return (
     <Container>
+      {/* implement products attributes in a card */}
       <Image>
         <img src={image} alt="" />
       </Image>

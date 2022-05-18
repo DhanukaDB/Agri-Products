@@ -5,6 +5,7 @@ export const initialState = {
   address: [],
 };
 
+//calculate total cost in cart
 export const getCartTotal = (cart) =>
   cart.reduce((amount, item) => item.price + amount, "");
 
@@ -12,12 +13,14 @@ const reducer = (state, action) => {
   console.log("action >>>>", action);
 
   switch (action.type) {
+    //add a prodct to cart
     case "ADD_TO_CART":
       return {
         ...state,
         cart: [...state.cart, action.item],
       };
-   
+       //remove a prodct from cart
+
     case "DELETE_PRODUCT":
       const index = state.cart.findIndex(
         (cartItem) => cartItem.id === action.id
@@ -35,12 +38,14 @@ const reducer = (state, action) => {
         ...state,
         cart: newCart,
       };
-      
+          //add a prodct to wishlist
+
       case 'ADD_TO_WISHLIST':
         return {
             ...state,
             favourite :[...state.favourite, action.item],
 };
+       //remove a prodct from wishlist
 
 case 'DELETE_FAVOURITE':
 const index1 = state.favourite.findIndex(

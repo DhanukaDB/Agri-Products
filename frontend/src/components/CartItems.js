@@ -16,10 +16,12 @@ function CartItems() {
   const navigate = useNavigate();
 
   let [qty, setqty] = useState(1);
+  //increase products quantity by 1
   const Increment = (e, id) => {
     setqty(++qty);
     e.preventDefault();
   };
+    //decrease products quantity by 1
   const Decrement = (e, id) => {
     setqty(--qty);
     e.preventDefault();
@@ -27,6 +29,7 @@ function CartItems() {
 
   const [{ cart }, dispatch] = useStateValue();
 
+  //remove a product from the cart
   const removeProduct = (e, id) => {
     e.preventDefault();
 
@@ -35,6 +38,7 @@ function CartItems() {
       id: id,
     });
   };
+  //if the cart has no any products
   if (cart.length === 0)
     return (
       <>
@@ -53,7 +57,9 @@ function CartItems() {
       <Container>
         <Main>
           <ShoppingCart>
+            {/* show cart items */}
             <h2>Shopping Cart</h2>
+            
             {cart?.map((product) => (
               <Product>
                 <Image>
@@ -94,6 +100,7 @@ function CartItems() {
           <Subtotal>
             <div>
               <p>
+                {/* calculate total number of product types and total price*/}
                 SubTotal ({cart.length} products ) :
                 <strong> Rs. {getCartTotal(cart) * qty}.00</strong>
               </p>
