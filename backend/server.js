@@ -23,15 +23,15 @@ connection.once("open", () => {
 
 // stripe router
 const stripeRoute = require("./routes/stripe");
-app.use("/api/create-checkout-session", stripeRoute);
+app.use("/payment", stripeRoute);
 
 //Customer router
 const customerRouter = require("./routes/customers.js");
 app.use("/customer", customerRouter);
 
 //Delivery address router
-const deliveryRouter =require("./routes/Delivery.js"); //import  delivery routes
-app.use("/delivery",deliveryRouter); //create delivery routes
+const deliveryRouter = require("./routes/Delivery.js"); //import  delivery routes
+app.use("/delivery", deliveryRouter); //create delivery routes
 
 //Products Router
 const productsRouter = require("./routes/product.js");
@@ -45,7 +45,6 @@ app.use("/favourites", favouritesRouter);
 //Farmer Router
 const farmerRouter = require("./routes/farmer.js");
 app.use("/farmer", farmerRouter);
-
 
 const port = process.env.PORT || 5000;
 

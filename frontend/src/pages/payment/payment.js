@@ -3,10 +3,17 @@ import "./payment.css";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../StateProvide";
+import styled from "styled-components";
+import CreditCardIcon from "@material-ui/icons/CreditCard";
+import { getCartTotal } from "../../reducer";
+import Checkout from "../../components/Payment/Checkout";
+import MobilePayModal from "../../components/Payment/MobilePayModal";
+import SubTotalContainer from "../../components/SubTotalContainer";
 
 function Payment() {
-  const [{ address }] = useStateValue();
+  const [{ address, cart }] = useStateValue();
   const navigate = useNavigate();
+
   return (
     <div className="main">
       <div className="container-review">
@@ -22,28 +29,67 @@ function Payment() {
             <p>{address.province}</p>
           </div>
         </div>
-        <div className="payment-container">
-          <h5>Payment Method</h5>
-          <Button
-            onClick={() => {
-              navigate("/api/create-checkout-session");
-            }}
-            className="pay-button"
-            variant="outline-dark"
-          >
-            Pay Via Credit Card
-          </Button>
-          <Button className="pay-button" variant="dark">
-            Pay Via Mobile Phone
-          </Button>
-        </div>
+
         <div className="order">
           <h5>Your order</h5>
+          <div>
+            {cart?.map((product) => (
+              <Product>
+                <Image>
+                  <img src={product.image} alt="" />
+                </Image>
+                <Description>
+                  <h4>{product.title}</h4>
+                  <p>{product.price}</p>
+                </Description>
+              </Product>
+            ))}
+          </div>
         </div>
       </div>
-      <div className="subtotal-container"></div>
+      <SubTotalContainer />
+      <div className="payment-container">
+        <h5>Payment Method</h5>
+
+        <Checkout />
+        <MobilePayModal />
+      </div>
     </div>
   );
 }
 
+const Product = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const Image = styled.div`
+  flex: 0.3;
+  img {
+    width: 90%;
+  }
+`;
+const Description = styled.div`
+  flex: 0.7;
+  h4 {
+    font-weight: 500;
+    font-size: 50px;
+  }
+  p {
+    font-weight: 900;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .remove {
+    background-color: #ff0000;
+    color: #1384b4;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    cursor: pointer;
+
+    &hover {
+      text-decoration: underline;
+    }
+  }
+`;
 export default Payment;
