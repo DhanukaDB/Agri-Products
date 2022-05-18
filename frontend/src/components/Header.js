@@ -31,8 +31,8 @@ function Header(){
       </NavDropdown>
     </Nav>
     <Nav>
-      <Nav.Link href="#deets">Sign In</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
+      <Nav.Link href="/signin">Sign In</Nav.Link>
+      <Nav.Link eventKey={2} href="/signup">
         Sign Up
       </Nav.Link>
     </Nav>
