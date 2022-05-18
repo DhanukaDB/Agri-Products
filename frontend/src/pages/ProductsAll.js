@@ -140,11 +140,11 @@ price={Product.price}
 }
 const Main = styled.div`
 display: grid;
-justify-content: center;
+
 place-items: center;
 width: 100%;
 grid-auto-rows: 420px;
- grid-template-columns: repeat(4, 280px);
+ grid-template-columns: repeat(5, 250px);
 grid-gap: 20px;
 
 }

@@ -66,13 +66,14 @@ function Carditem({ id, image, title, price }) {
 }
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  z-index: 10;
+ height: 370px;
+    width: 200px;
+    background: #defade;
+    border-radius: 15px;
+    position:static;
+    border: none;
+    overflow: hidden;
+    box-shadow:0px 24px 48px 0 rgba(0,0,0,0.1);
 `;
 const Image = styled.div`
   width: 100%;
@@ -81,7 +82,7 @@ const Image = styled.div`
   flex-direction: column;
 
   justify-content: center;
-  align-items: left;
+  align-items: center;
   margin-top: 20px;
   flex: 0.3;
   img {

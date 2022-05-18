@@ -96,7 +96,7 @@ const Main = styled.div`
     display:flex;
     padding:15px;
 
-
+    justify-content: center;
     @media only screen and (max-width:1200px){
         flex-direction:column;
     }
@@ -118,6 +118,7 @@ const Favourites=styled.div`
 const Product=styled.div`
     display:flex;
     align-items:center;
+    
 
 `;
 const Image=styled.div`

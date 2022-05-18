@@ -38,10 +38,6 @@ function App() {
             <Route path="/cartitems" element={<CartItems/>}/>
             <Route path="/favouriteitems" element={<FavouriteItems/>}/>
 
-            <Route
-              path="/api/create-checkout-session"
-              element={<PaymentForm />}
-            ></Route>
            
             <Route path="/allproducts" element={<ProductsAll />}></Route>
             <Route path="/farmerSignup" element={<FarmerSignup />}></Route>

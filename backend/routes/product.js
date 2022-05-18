@@ -7,7 +7,7 @@ router.route("/create").post((req,res)=>{
 
     const productName = req.body.productName;
     const category = req.body.category;
-    const price = req.body.price;
+    const price = Number(req.body.price);
     const description = req.body.description;
     const manufacDate = req.body.manufacDate;
     const image = req.body.image;
