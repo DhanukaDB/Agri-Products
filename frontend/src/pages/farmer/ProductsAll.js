@@ -1,8 +1,9 @@
 import React, {useState,useEffect} from "react";
-import Table from 'react-bootstrap/Table'
 import axios from "axios";
 import {Link} from "react-router-dom";
 import {Button,Card} from "react-bootstrap";
+import Carditem from "../../components/Card";
+import styled from "styled-components";
 
 
 
@@ -47,24 +48,14 @@ function AllProducts(props){
  
  <br/>
         
-      <Table striped bordered hover variant="dark">
-  <thead>
+     
+
   <input type="text" placeholder = "Search Product " onChange ={(e) =>{
   setSearch(e.target.value);
 }} />
-    <tr>
-      <th scope="col">Product id</th>
-      <th scope="col">Product Name</th>
-      <th scope="col">Category</th>
-      <th scope="col">Price</th>
-      <th scope="col">Description</th>
-      <th scope="col">Date</th>
-      <th scope="col">Image</th>
-      
     
-    </tr>
-  </thead>
-  <tbody>
+
+
 
   {products.filter(Product => {
                           if(search == ""){
@@ -76,54 +67,54 @@ function AllProducts(props){
                       }).
     
     
-  map((Product) => {
+  map((product) => {
 
     return(
 
 
-
+<Main>
+{
+          products?.map((Product) => (
         
-      <tr key={Product._id}>
-      
-      <td> <Button variant="outline-primary" onClick={()=>Update(Product._id)}>{Product._id}</Button></td>
-      <td>{Product.productName}</td>
-      <td>{Product.category}</td>
-      <td>{Product.price}</td>
-      <td>{Product.description}</td>
-      <td>{Product.manufacDate}</td>
-      <td>{Product.image}</td>
-     
-    </tr>
-    );
-    })} 
+    <Carditem
+id={Product._id}
+image={Product.image}
+title={Product.productName}
+price={Product.price}
 
-   
-    </tbody>
-</Table>
-    
+
+/>
+  ))}
+</Main>
+
+   );
+  
+          })}
+          
+
+          
  <br/>
  <br/>
 
 
- <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
+
     </div>
     
   )
 
 }
-  
-export default AllProducts;
+const Main = styled.div`
+display: grid;
+justify-content: center;
+place-items: center;
+width: 100%;
+grid-auto-rows: 420px;
+ grid-template-columns: repeat(4, 280px);
+grid-gap: 20px;
 
+}
+`;
+export default AllProducts;
 
 
 
