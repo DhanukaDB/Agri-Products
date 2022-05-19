@@ -1,14 +1,11 @@
 import React from "react";
 import "./payment.css";
-import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../StateProvide";
 import styled from "styled-components";
-import CreditCardIcon from "@material-ui/icons/CreditCard";
-import { getCartTotal } from "../../reducer";
 import Checkout from "../../components/Payment/Checkout";
-import MobilePayModal from "../../components/Payment/MobilePayModal";
 import SubTotalContainer from "../../components/SubTotalContainer";
+import { Button } from "react-bootstrap";
 
 function Payment() {
   const [{ address, cart }] = useStateValue();
@@ -52,7 +49,15 @@ function Payment() {
         <h5>Payment Method</h5>
 
         <Checkout />
-        <MobilePayModal />
+        <Button
+          className="me-4"
+          variant="outline-dark"
+          onClick={() => {
+            navigate("/mobilebillpay");
+          }}
+        >
+          Pay Via Mobile Bill
+        </Button>
       </div>
     </div>
   );
