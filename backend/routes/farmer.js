@@ -102,4 +102,52 @@ router.route("/get/:id").get(async (req, res) =>{
     })
 })
 
+router.route("/signin").post((req,res) => {
+    {/*const email = req.body.email;
+    const password     = req.body.password; */}
+    const username = req.body.username;
+        const email    = req.body.email;
+        const phoneno  = Number(req.body.phoneno);
+        const password   = req.body.password;
+        const state   = req.body.state;
+        
+        const newCustomer = new Customer ({
+            username,
+        email,
+        phoneno,
+        password,
+        state,
+    
+        })
+    
+     if(!email || !password){
+         res.status(422).json({error:"Please add email or password"})
+     }
+     Customer.findOne({email:email})
+      .then(savedCustomer =>{
+          if(!savedCustomer){
+             return  res.status(422).json({error:"Invalid Email or Password"})
+    
+          }
+    
+          Customer.findOne({password:password})
+          .then(savedCustomer =>{
+            if(savedCustomer){
+                 {/* res.json({message:"successfully signed in"}) */}
+    
+                 res.json(Customer);
+                
+                
+              }
+              else{
+                  return res.status(422).json({error:"Invalid Email or Password"})
+              }
+          })
+        .catch(err=>{
+            console.log(err)
+        })
+    
+      })
+    })
+
 module.exports = router;

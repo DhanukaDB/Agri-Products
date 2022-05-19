@@ -15,14 +15,7 @@ const FarmerSignin = (props) => {
     if (!email || !password) {
       alert("Please add email or password");
       return;
-    } else if (
-      !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-        email
-      )
-    ) {
-      alert("Invalid email");
-      return;
-    }
+    } 
 
     e.preventDefault();
 
