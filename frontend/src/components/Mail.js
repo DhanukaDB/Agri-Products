@@ -24,7 +24,7 @@ function Mail() {
         <input type="text" name="name" />
         <label>Email</label>
         <input type="email" name="user_email" />
-        <input type="submit" value="send" />
+        <input type="Send Email" value="send" />
       </form>
     </div>
   );

@@ -13,8 +13,10 @@ import ProductsAll from "./pages/ProductsAll";
 import FarmerSignup from "./pages/FarmerSignup";
 import FarmerSignin from "./pages/FarmerSignin";
 import Mail from "./components/Mail";
+import MobilePayModal from "./components/MobilePay/MobilePay";
 import Signup from "./components/Signup";
 import Signin from "./components/Signin";
+
 function App() {
   return (
     <div className="App">
@@ -36,7 +38,8 @@ function App() {
             <Route path="/farmerSignup" element={<FarmerSignup />}></Route>
             <Route path="/farmerSignin" element={<FarmerSignin />}></Route>
             <Route path="/mail" element={<Mail />}></Route>
-            <Route path="/signup" element={<Signup />}></Route> 
+            <Route path="/mobilebillpay" element={<MobilePayModal />}></Route>
+            <Route path="/signup" element={<Signup />}></Route>
             <Route path="/signin" element={<Signin />}></Route>
           </Routes>
         </div>
