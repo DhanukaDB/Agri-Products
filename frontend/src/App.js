@@ -16,6 +16,8 @@ import Mail from "./components/Mail";
 import MobilePayModal from "./components/MobilePay/MobilePay";
 import Signup from "./components/Signup";
 import Signin from "./components/Signin";
+import DeliveryFeedback from "./components/DeliveryFeedback";
+import ViewDelivery from "./components/ViewDelivery";
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
             <Route path="/mobilebillpay" element={<MobilePayModal />}></Route>
             <Route path="/signup" element={<Signup />}></Route>
             <Route path="/signin" element={<Signin />}></Route>
+            <Route path="/feedback" element={<DeliveryFeedback />}></Route>
+            <Route path="/viewdelivery" element={<ViewDelivery />}></Route>
           </Routes>
         </div>
       </Router>
