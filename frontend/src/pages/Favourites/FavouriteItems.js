@@ -122,7 +122,7 @@ const Product=styled.div`
 
 `;
 const Image=styled.div`
-    flex:0.3;
+    flex:0.2;
     img{
         width:90%;
     }
@@ -131,7 +131,7 @@ const Description=styled.div`
     flex:0.7;
     h4{
         font-weight:500;
-        font-size:50px;
+        font-size:30px;
     }
     p{
         font-weight:900;

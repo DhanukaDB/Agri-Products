@@ -6,18 +6,22 @@ import Header from "./Header";
 import { getCartTotal } from "../reducer";
 //import CounterFunction from "./CounterFunction";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import { red } from "@material-ui/core/colors";
+import { red,green } from "@material-ui/core/colors";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
 import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
+
 
 function CartItems() {
   const navigate = useNavigate();
 
   let [qty, setqty] = useState(1);
+  //increase products quantity by 1
   const Increment = (e, id) => {
     setqty(++qty);
     e.preventDefault();
   };
+    //decrease products quantity by 1
   const Decrement = (e, id) => {
     setqty(--qty);
     e.preventDefault();
@@ -25,6 +29,7 @@ function CartItems() {
 
   const [{ cart }, dispatch] = useStateValue();
 
+  //remove a product from the cart
   const removeProduct = (e, id) => {
     e.preventDefault();
 
@@ -33,11 +38,15 @@ function CartItems() {
       id: id,
     });
   };
+  //if the cart has no any products
   if (cart.length === 0)
     return (
       <>
         <Header />
         <h3 style={{ textAlign: "center", fontSize: "5rem" }}>Empty Cart</h3>
+        <br/>
+        <center><Button onClick={() => navigate("/")}   style={{ backgroundColor: green[500] }}>Move to Shop</Button></center>
+
       </>
     );
 
@@ -48,7 +57,9 @@ function CartItems() {
       <Container>
         <Main>
           <ShoppingCart>
+            {/* show cart items */}
             <h2>Shopping Cart</h2>
+            
             {cart?.map((product) => (
               <Product>
                 <Image>
@@ -89,8 +100,9 @@ function CartItems() {
           <Subtotal>
             <div>
               <p>
+                {/* calculate total number of product types and total price*/}
                 SubTotal ({cart.length} products ) :
-                <strong> Rs. {getCartTotal(cart)*qty }.00</strong>
+                <strong> Rs. {getCartTotal(cart) * qty}.00</strong>
               </p>
               <small>
                 <span>Click here to pay...</span>
@@ -186,16 +198,16 @@ const Product = styled.div`
   align-items: center;
 `;
 const Image = styled.div`
-  flex: 0.3;
+  flex: 0.2;
   img {
     width: 90%;
   }
 `;
 const Description = styled.div`
-  flex: 0.7;
+  flex: 0.8;
   h4 {
     font-weight: 500;
-    font-size: 50px;
+    font-size: 30px;
   }
   p {
     font-weight: 900;
