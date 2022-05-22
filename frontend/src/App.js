@@ -18,6 +18,8 @@ import Signup from "./components/Signup";
 import Signin from "./components/Signin";
 import DeliveryFeedback from "./components/DeliveryFeedback";
 import ViewDelivery from "./components/ViewDelivery";
+import FavouriteItems from "./pages/Favourites/FavouriteItems";
+
 
 function App() {
   return (
@@ -45,6 +47,8 @@ function App() {
             <Route path="/signin" element={<Signin />}></Route>
             <Route path="/feedback" element={<DeliveryFeedback />}></Route>
             <Route path="/viewdelivery" element={<ViewDelivery />}></Route>
+            <Route path="/favouriteitems" element={<FavouriteItems/>}/>
+
           </Routes>
         </div>
       </Router>

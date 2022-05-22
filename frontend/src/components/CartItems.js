@@ -66,7 +66,7 @@ function CartItems() {
                     <button onClick={Decrement}> - </button>
                   </Quantity>
 
-                  <p>{product.price * qty}</p>
+                  <p>Rs. {product.price * qty}</p>
                   <button
                     onClick={(e) => {
                       if (
@@ -90,7 +90,7 @@ function CartItems() {
             <div>
               <p>
                 SubTotal ({cart.length} products ) :
-                <strong> Rs. {getCartTotal(cart) * qty}.00</strong>
+                <strong> Rs. {getCartTotal(cart)*qty }.00</strong>
               </p>
               <small>
                 <span>Click here to pay...</span>

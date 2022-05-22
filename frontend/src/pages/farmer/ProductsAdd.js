@@ -88,7 +88,7 @@ function ProductsAdd(){
 
                 <Form.Group className="container" controlId="nicNo">
                   <Form.Label>Price</Form.Label>
-                  <Form.Control type="text" required placeholder="ex :550LKR"  maxlength="10" onChange={(e)=>{
+                  <Form.Control type="number" required placeholder="ex :550LKR"   onChange={(e)=>{
 
               serprice(e.target.value);
 
