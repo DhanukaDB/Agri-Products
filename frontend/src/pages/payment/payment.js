@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../StateProvide";
 import styled from "styled-components";
 import Checkout from "../../components/Payment/Checkout";
-import SubTotalContainer from "../../components/SubTotalContainer";
+import SubTotalContainer from "../../components/SubTotal/SubTotalContainer";
 import { Button } from "react-bootstrap";
 
 function Payment() {
@@ -26,7 +26,6 @@ function Payment() {
             <p>{address.province}</p>
           </div>
         </div>
-
         <div className="order">
           <h5>Your order</h5>
           <div>
@@ -44,14 +43,13 @@ function Payment() {
           </div>
         </div>
       </div>
-      <SubTotalContainer />
-      <div className="payment-container">
-        <h5>Payment Method</h5>
+              <div className="subtotal">
+          <SubTotalContainer />
+        <div className="payment-container">
 
         <Checkout />
         <Button
-          className="me-4"
-          variant="outline-dark"
+          className="me-4 btn-primary"
           onClick={() => {
             navigate("/mobilebillpay");
           }}
@@ -59,6 +57,7 @@ function Payment() {
           Pay Via Mobile Bill
         </Button>
       </div>
+        </div>
     </div>
   );
 }
