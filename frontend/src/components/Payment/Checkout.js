@@ -69,7 +69,7 @@ const Checkout = (subTotal) => {
       description={`Total is $${priceForStripe}`}
       token={tokenHandler}
     >
-      <Button className="me-4" variant="outline-dark">
+      <Button className="me-4" btn-primary>
         Pay Via Credit Card
       </Button>
     </StriprCheckout>

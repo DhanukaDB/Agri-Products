@@ -26,9 +26,11 @@ function MobilePayModal() {
   };
 
   const requestOtp = (e) => {
-    e.preventdefault();
+    e.preventDefault();
+
     if (mobileNumber.length >= 12) {
       setFormExpand(true);
+      console.log("request");
       generateRecaptcha();
       let appVerifier = window.recaptchaVerifier;
 
@@ -44,11 +46,12 @@ function MobilePayModal() {
   };
 
   const verifyOTP = (e) => {
+    e.preventDefault();
     let otp = e.target.value;
     setOtp(otp);
     //if user enter six digit only it should verify
     if (otp.length === 6) {
-      console.log(otp);
+
       let confirmationResult = window.confirmationResult;
       confirmationResult
         .confirm(otp)
@@ -56,6 +59,7 @@ function MobilePayModal() {
           // User signed in successfully.
           const user = result.user;
           console.log(user);
+          alert("Payment sucessfull!");
         })
         .catch((error) => {
           // User couldn't sign in (bad verification code?)
@@ -68,7 +72,7 @@ function MobilePayModal() {
       <Form onSubmit={requestOtp}>
         <h1>Pay Via Mobile Phone</h1>
         <div className="mb-3">
-          <lable>Phone Number</lable>
+          <label>Phone Number</label>
           <input
             type="tel"
             className="form-control telInput"
