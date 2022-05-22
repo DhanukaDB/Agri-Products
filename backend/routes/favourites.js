@@ -70,7 +70,7 @@ router.route("/get/:id").get(async (req, res) =>{
         
     }).catch((err) =>{
         console.log(err.message)
-        res.status(500).send({status:"Fetching Err",error: err.message});
+        res.status(500).send({status:"Fetching the Err",error: err.message});
     })
 })
 
