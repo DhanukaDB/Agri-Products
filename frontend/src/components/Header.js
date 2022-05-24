@@ -1,49 +1,48 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../StateProvide";
 import styled from "styled-components";
 
-import {Container, Navbar,Nav,NavDropdown} from "react-bootstrap";
+import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 
-function Header(){
-  const [{cart}]=useStateValue();
-  const [{favourite}]=useStateValue();
+function Header() {
+  const [{ cart }] = useStateValue();
+  const [{ favourite }] = useStateValue();
   const navigate = useNavigate();
 
-    return(
+  return (
 
-<div>
+    <div>
 
-<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <Container>
-  <Navbar.Brand href="/">Sani Agro 🍂</Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="me-auto">
-    
-    </Nav>
-    <Nav>
-      <Nav.Link href="/signin">Sign In</Nav.Link>
-      <Nav.Link eventKey={2} href="/signup">
-        Sign Up
-      </Nav.Link>
-    </Nav>
-    <HeartButton onClick={() => navigate("/favouriteitems")}>
-            <img src="./heart.png" alt="" />
-            <p>{favourite?.length}</p> 
-          </HeartButton>
-    <CartButton onClick={() => navigate("/cartitems")}>
-            <img src="./cart.png" alt="" />
-            <p>{cart?.length}</p>
-          </CartButton>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="/">Sani Agro 🍂</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
 
-  </Navbar.Collapse>
-  </Container>
-</Navbar>
- </div>
+            </Nav>
+            <Nav>
+              <Nav.Link href="/signin">Sign In</Nav.Link>
+              <Nav.Link eventKey={2} href="/signup">
+                Sign Up
+              </Nav.Link>
+            </Nav>
+            <HeartButton onClick={() => navigate("/favouriteitems")}>
+              <img src="./heart.png" alt="" />
+              <p>{favourite?.length}</p>
+            </HeartButton>
+            <CartButton onClick={() => navigate("/cartitems")}>
+              <img src="./cart.png" alt="" />
+              <p>{cart?.length}</p>
+            </CartButton>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </div>
 
-    )
+  )
 
 }
 

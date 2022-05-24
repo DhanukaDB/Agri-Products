@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Payment from "./pages/payment/payment";
-import CheckoutSucess from "./components/CheckoutSucess";
+import CheckoutSucess from "./components/Payment/CheckoutSucess";
 import NotFound from "./components/NotFound";
 import DeliveryAddress from "./components/DeliveryAddress";
 import "./App.css";
@@ -47,7 +47,7 @@ function App() {
             <Route path="/signin" element={<Signin />}></Route>
             <Route path="/feedback" element={<DeliveryFeedback />}></Route>
             <Route path="/viewdelivery" element={<ViewDelivery />}></Route>
-            <Route path="/favouriteitems" element={<FavouriteItems/>}/>
+            <Route path="/favouriteitems" element={<FavouriteItems />} />
 
           </Routes>
         </div>
