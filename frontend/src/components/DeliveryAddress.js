@@ -142,12 +142,12 @@ export default function DeliveryAddress() {
                 </label>{" "}
                 <br />
                 <input
+                  required={true}
                   type="text"
                   className="form-control"
                   id="fullname"
                   aria-describedby="em"
                   placeholder="Full name"
-                  required
                   onChange={(e) => {
                     setFullname(e.target.value);
                   }}
