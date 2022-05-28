@@ -3,9 +3,10 @@ import axios from "axios";
 import { Form, Button, Container } from "react-bootstrap";
 import { useStateValue } from "../StateProvide";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 export default function DeliveryAddress() {
-  //adding function
+  
 
   //creating states
   const [{ }, dispatch] = useStateValue();
@@ -71,14 +72,17 @@ export default function DeliveryAddress() {
 
   return (
     <div>
+       <Header/>
       <br></br>
       <div
         sx={{ ml: "auto" }}
         value={value}
         onChange={(e, val) => setValue(val)}
       >
+
+      
         <div>
-          <a href="/cart">
+          <a href="/">
             <img
               style={{ height: 90, width: 90, marginLeft: 252 }}
               src="https://res.cloudinary.com/dorcq99nr/image/upload/v1652113795/AgriProducts/cart_hvasfk.jpg"
@@ -134,7 +138,7 @@ export default function DeliveryAddress() {
               <div className="form-group">
                 <label for="fullname" className="labels">
                   {" "}
-                  Full Name *:{" "}
+                  <b>Full Name *:</b>{" "}
                 </label>{" "}
                 <br />
                 <input
@@ -154,7 +158,7 @@ export default function DeliveryAddress() {
               <div className="form-group">
                 <label for="phoneno" className="labels">
                   {" "}
-                  Contact Number *:{" "}
+                 <b>Contact Number *:</b> {" "}
                 </label>
                 <input
                   type="text"
@@ -175,7 +179,7 @@ export default function DeliveryAddress() {
               <div className="form-group">
                 <label for="buildingno" className="labels">
                   {" "}
-                  Building Number *:
+                 <b>Building Number *:</b> 
                 </label>
                 <input
                   type="text"
@@ -193,9 +197,9 @@ export default function DeliveryAddress() {
               <br />
               <br />
               <div class="form-group">
-                <label for="street" className="labels">
+                <label for="street" className="labels" required>
                   {" "}
-                  Street *:
+                <b> Street *:</b> 
                 </label>
                 <input
                   type="text"
@@ -215,7 +219,7 @@ export default function DeliveryAddress() {
               <div class="form-group">
                 <label for="city" className="labels">
                   {" "}
-                  City *:
+                 <b>City *:</b> 
                 </label>
                 <input
                   type="text"
@@ -235,7 +239,7 @@ export default function DeliveryAddress() {
               <div className="form-group ">
                 <i className="zmdi zmdi-email zmdi-hc-2x"></i>
                 <label for=" province" className="labels">
-                  Province *:
+                 <b> Province *:</b>
                 </label>
                 <select
                   class="custom-select custom-select-lg mb-3"

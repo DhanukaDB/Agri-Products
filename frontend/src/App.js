@@ -19,6 +19,9 @@ import Signin from "./components/Signin";
 import DeliveryFeedback from "./components/DeliveryFeedback";
 import ViewDelivery from "./components/ViewDelivery";
 import FavouriteItems from "./pages/Favourites/FavouriteItems";
+import DailyDeliveryReport from "./components/DailyDeliveryReport";
+import UpdateDelivery from "./components/UpdateDelivery";
+import AdminPanel from "./components/AdminPanel";
 
 
 function App() {
@@ -48,7 +51,10 @@ function App() {
             <Route path="/feedback" element={<DeliveryFeedback />}></Route>
             <Route path="/viewdelivery" element={<ViewDelivery />}></Route>
             <Route path="/favouriteitems" element={<FavouriteItems />} />
-
+            <Route path="/report" element={<DailyDeliveryReport />}></Route>
+            <Route path="/updateDelivery" element={<UpdateDelivery />}></Route>
+            <Route path="/adminPanel" element={<AdminPanel />}></Route>
+            <Route path="/delivery" element={<DeliveryAddress />}></Route>
           </Routes>
         </div>
       </Router>

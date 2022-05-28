@@ -28,6 +28,7 @@ function Header() {
               <Nav.Link eventKey={2} href="/signup">
                 Sign Up
               </Nav.Link>
+              <Nav.Link href="/feedback">Feedback</Nav.Link>
             </Nav>
             <HeartButton onClick={() => navigate("/favouriteitems")}>
               <img src="./heart.png" alt="" />
