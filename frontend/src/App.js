@@ -22,6 +22,7 @@ import FavouriteItems from "./pages/Favourites/FavouriteItems";
 import DailyDeliveryReport from "./components/DailyDeliveryReport";
 import UpdateDelivery from "./components/UpdateDelivery";
 import AdminPanel from "./components/AdminPanel";
+import DeliveryMailer from "./components/DeliveryMailer";
 
 
 function App() {
@@ -55,6 +56,8 @@ function App() {
             <Route path="/updateDelivery" element={<UpdateDelivery />}></Route>
             <Route path="/adminPanel" element={<AdminPanel />}></Route>
             <Route path="/delivery" element={<DeliveryAddress />}></Route>
+            <Route path="/deliveryMailer" element={<DeliveryMailer />}></Route>
+            
           </Routes>
         </div>
       </Router>
