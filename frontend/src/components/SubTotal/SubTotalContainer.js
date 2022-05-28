@@ -2,20 +2,21 @@ import React from "react";
 import { getCartTotal } from "../../reducer";
 import { useStateValue } from "../../StateProvide";
 import "./subTotal.css";
+import { Card } from 'react-bootstrap';
 
 const SubTotalContainer = () => {
   const [{ cart }] = useStateValue();
 
   return (
-    <div className="Subtotal">
-          <p className="p">
-            SubTotal ({cart.length} products ) :
-            <strong> Rs. {getCartTotal(cart)}.00</strong>
-          </p>
-          <small className="small">
-            <span className="span">Click here to pay...</span>
-          </small>
-        </div>
+    <Card border="success" style={{ width: '18rem' }}>
+      <Card.Header>SubTotal </Card.Header>
+      <Card.Body>
+        <Card.Title>({cart.length} products ) :</Card.Title>
+        <Card.Text>
+          Rs. {getCartTotal(cart)}.00
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 

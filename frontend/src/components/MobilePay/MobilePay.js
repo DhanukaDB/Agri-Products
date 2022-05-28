@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { getCartTotal } from "../../reducer";
+import { useStateValue } from "../../StateProvide";
 import { authentication } from "../../firabaseConfig";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 import "./mobilepay.css";
 
 function MobilePayModal() {
+  const [{ cart }] = useStateValue();
+  const navigate = useNavigate();
   //country code
   const countryCode = "+94";
   //OTP
@@ -59,7 +64,8 @@ function MobilePayModal() {
           // User signed in successfully.
           const user = result.user;
           console.log(user);
-          alert("Payment sucessfull!");
+          //navigate to sucess page
+          navigate("/checkout-success");
         })
         .catch((error) => {
           // User couldn't sign in (bad verification code?)
@@ -71,6 +77,10 @@ function MobilePayModal() {
     <div className="form-container">
       <Form onSubmit={requestOtp}>
         <h1>Pay Via Mobile Phone</h1>
+        <p className="amount">
+          SubTotal ({cart.length} products ) :
+          <strong> Rs. {getCartTotal(cart)}.00</strong>
+        </p>
         <div className="mb-3">
           <label>Phone Number</label>
           <input

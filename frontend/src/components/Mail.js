@@ -1,5 +1,6 @@
 import React from "react";
 import emailjs from "emailjs-com";
+import { Form } from 'react-bootstrap';
 
 function Mail() {
 
@@ -21,16 +22,17 @@ function Mail() {
   }
   return (
     <div>
-      <form onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="name" />
+      <Form onSubmit={sendEmail}>
+        <Form.Group className="mb-3" controlId="formGroupEmail">
+          <Form.Label>Name</Form.Label>
+          <Form.Control type="text" name="name" />
+        </Form.Group>
+        <Form.Label>Email</Form.Label>
+        <Form.Control type="email" name="user_email" />
         <br />
-        <label>Email</label>
-        <input type="email" name="user_email" />
-        <br />
-        <br />
-        <input type="submit" className="btn btn-info" value="Send" />
-      </form>
+        <input type="submit" className="btn btn-success" value="Send Mail" />
+        <br /> <br />
+      </Form>
     </div>
   );
 }

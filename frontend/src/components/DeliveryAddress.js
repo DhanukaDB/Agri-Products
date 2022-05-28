@@ -8,7 +8,7 @@ export default function DeliveryAddress() {
   //adding function
 
   //creating states
-  const [{}, dispatch] = useStateValue();
+  const [{ }, dispatch] = useStateValue();
   const [fullname, setFullname] = useState("");
   const [phoneno, setPhoneno] = useState("");
   const [buildingNo, setBuildingNo] = useState("");

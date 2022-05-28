@@ -12,12 +12,15 @@ function Payment() {
   const navigate = useNavigate();
 
   return (
-    <div className="main">
+    <div className="container">
       <div className="container-review">
         <h2>Review Your order</h2>
         <div className="container-address">
-          <h5>Shipping Address</h5>
+          <div className="container" id="subtotal">
+            <SubTotalContainer />
+          </div>
           <div className="address-details">
+            <h5 className="header-order">Shipping Address</h5>
             <p>{address.fullname}</p>
             <p>{address.phoneno}</p>
             <p>{address.buildingNo}</p>
@@ -27,7 +30,19 @@ function Payment() {
           </div>
         </div>
         <div className="order">
-          <h5>Your order</h5>
+          <div className="payment-container">
+            <Checkout />
+            <Button
+              className="me-4 btn-primary" id="btn-pay"
+              onClick={() => {
+                navigate("/mobilebillpay");
+              }}
+            >
+              Pay Via Mobile Bill
+            </Button>
+          </div>
+          <br />
+          <h5 className="header-order">Your order</h5>
           <div>
             {cart?.map((product) => (
               <Product>
@@ -35,7 +50,7 @@ function Payment() {
                   <img src={product.image} alt="" />
                 </Image>
                 <Description>
-                  <h4>{product.title}</h4>
+                  <p>{product.title}</p>
                   <p>{product.price}</p>
                 </Description>
               </Product>
@@ -43,21 +58,6 @@ function Payment() {
           </div>
         </div>
       </div>
-              <div className="subtotal">
-          <SubTotalContainer />
-        <div className="payment-container">
-
-        <Checkout />
-        <Button
-          className="me-4 btn-primary"
-          onClick={() => {
-            navigate("/mobilebillpay");
-          }}
-        >
-          Pay Via Mobile Bill
-        </Button>
-      </div>
-        </div>
     </div>
   );
 }
@@ -70,6 +70,8 @@ const Image = styled.div`
   flex: 0.3;
   img {
     width: 90%;
+    margin: 2%;
+    border-radius: 4px;
   }
 `;
 const Description = styled.div`
