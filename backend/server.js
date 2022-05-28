@@ -25,6 +25,10 @@ connection.once("open", () => {
 const stripeRoute = require("./routes/stripe");
 app.use("/payment", stripeRoute);
 
+//SMS
+const smsRouter = require("./routes/sms");
+app.use("/sms", smsRouter);
+
 //Customer router
 const customerRouter = require("./routes/customers.js");
 app.use("/customer", customerRouter);
