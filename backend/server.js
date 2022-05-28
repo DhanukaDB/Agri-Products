@@ -41,6 +41,10 @@ app.use("/products", productsRouter);
 const farmerRouter = require("./routes/farmer.js");
 app.use("/farmer", farmerRouter);
 
+//Feedback router
+const feedbackRouter =require("./routes/Feedback.js"); //import  feedback routes
+app.use("/feedback",feedbackRouter); //create feedback routes
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, (error) => {
