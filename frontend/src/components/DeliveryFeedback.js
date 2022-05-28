@@ -16,7 +16,9 @@ export default function DeliveryFeedback(){  //adding function
  
 
   function sendData(e){  //create event send data
+    
 
+    //email Validation
     if(!(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email))){
       alert("Incorrect Email type");
       return
@@ -57,7 +59,7 @@ export default function DeliveryFeedback(){  //adding function
 
 <div className="form-group">
     <label for="Username">Enter Username</label>
-    <input type="text" className="form-control" id="username" aria-describedby="em" placeholder="Enter Username" 
+    <input type="text" className="form-control" id="username" aria-describedby="em" placeholder="Enter Username"  required
     onChange={(e)=>{
       setUsername(e.target.value);
      }}   />
@@ -65,7 +67,7 @@ export default function DeliveryFeedback(){  //adding function
   </div>
   <div class="form-group">
     <label for="email">Email Address</label>
-    <input type="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email Address" require onChange={(e) =>{
+    <input type="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email Address" required onChange={(e) =>{
       setEmail(e.target.value);
      }}  />
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -73,7 +75,7 @@ export default function DeliveryFeedback(){  //adding function
 
   Type
   <div class="form-check">    
-  <input class="form-check-input" type="radio" name="type" id="feedback" value="feedback"  onChange={(e) =>{
+  <input class="form-check-input" type="radio" name="type" id="feedback" value="feedback"  required onChange={(e) =>{
       setType(e.target.value);
      }}  />
   <label class="form-check-label" for="feedback">
@@ -81,7 +83,7 @@ export default function DeliveryFeedback(){  //adding function
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input"   type="radio" name="type" id="complaint" value="complint"  require onChange={(e) =>{
+  <input class="form-check-input"   type="radio" name="type" id="complaint" value="complint"  required onChange={(e) =>{
       setType(e.target.value);
      }}  />
   <label class="form-check-label" for="complaint">
@@ -91,7 +93,7 @@ export default function DeliveryFeedback(){  //adding function
 <br></br>
 <div class="form-group">
     <label for="contactNumber">Enter Contact Number</label>
-    <input type="text" class="form-control" id="contactNumber" aria-describedby="em" placeholder="Contact Number"  onChange={(e) =>{
+    <input type="text" class="form-control" id="contactNumber" aria-describedby="em" placeholder="Contact Number" required onChange={(e) =>{
       setContactNumber(e.target.value);
      }}  />
      
@@ -100,7 +102,7 @@ export default function DeliveryFeedback(){  //adding function
   <br></br>
 <div class="form-group">
     <label for="trackingno">Tracking Number</label>
-    <input type="text" class="form-control" id="trackingno" aria-describedby="em" placeholder="Tracking Number" require onChange={(e) =>{
+    <input type="text" class="form-control" id="trackingno" aria-describedby="em" placeholder="Tracking Number" required onChange={(e) =>{
      setTrackingno(e.target.value);
      }}  />
      
@@ -108,7 +110,7 @@ export default function DeliveryFeedback(){  //adding function
  
   <div class="form-group">
     <label for="message">Description</label>
-    <textarea class="form-control" id="message" rows="3" placeholder="Please include your Feedback or Complaint" require onChange={(e) =>{
+    <textarea class="form-control" id="message" rows="3" placeholder="Please include your Feedback or Complaint" required onChange={(e) =>{
       setMessage(e.target.value);
      }}></textarea>
   </div>

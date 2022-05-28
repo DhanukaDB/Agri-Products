@@ -123,14 +123,7 @@ router.route("/signin").post((req, res) => {
     const password = req.body.password;
     const state = req.body.state;
 
-    const newFarmer = new Farmer({
-        username,
-        email,
-        phoneno,
-        password,
-        state,
-
-    })
+  
 
     if (!email || !password) {
         res.status(422).json({ error: "Please add email or password" })

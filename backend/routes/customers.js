@@ -119,25 +119,20 @@ router.route("/get/:email").get((req, res) => {
 
 
 
-router.route("/signin").post((req,res) => {
-{/*const email = req.body.email;
-const password     = req.body.password; */}
-const username = req.body.username;
-    const email    = req.body.email;
-    const phoneno  = Number(req.body.phoneno);
-    const password   = req.body.password;
-    
-    const newCustomer = new Customer ({
-        username,
-        email, 
-        phoneno,
-        password,
+router.route("/signin").post((req, res) => {
+    {/*const email = req.body.email;
+    const password     = req.body.password; */}
 
-    })
+    const email = req.body.email;
+    const password = req.body.password;
 
- if(!email || !password){
-     res.status(422).json({error:"Please add email or password"})
- }
+
+  
+
+    if (!email || !password) {
+        res.status(422).json({ error: "Please add email or password" })
+    }
+
  Customer.findOne({email:email})
   .then(savedCustomer =>{
       if(!savedCustomer){
@@ -168,4 +163,3 @@ const username = req.body.username;
 
 
 module.exports = router;
-
